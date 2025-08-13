@@ -5,7 +5,8 @@ const path = require('path');
 
 const app = express();
 const PORT = 3000;
-
+const cors = require('cors');
+app.use(cors());
 // Connect to existing SQLite database
 const db = new sqlite3.Database(path.join(__dirname, 'empleados.db'), (err) => {
     if (err) {
